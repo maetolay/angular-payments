@@ -56,7 +56,7 @@ angular.module('angularPayments')
       luhn: true
     }, {
       type: 'mastercard',
-      pattern: /^5[1-5]/,
+      pattern: /^(5[1-5]|222[1-9]|22[3-9]|2[3-6]|27[0-1]|2720)/,
       format: defaultFormat,
       inputFormat: defaultInputFormat,
       length: [16],
@@ -104,7 +104,7 @@ angular.module('angularPayments')
       for (i = 0, len = cards.length; i < len; i++) {
 
         card = cards[i];
-        
+
         if (card.type === type) {
           return card;
         }
